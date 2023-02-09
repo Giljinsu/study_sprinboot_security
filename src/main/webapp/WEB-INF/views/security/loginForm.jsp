@@ -20,7 +20,8 @@
           <label for="password" class="sr-only">Password</label>
           <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
         </p>
-<input name="_csrf" type="hidden" value="5801423b-5a21-482a-b816-c1566e7aaf27">
+        <%-- <input name="_csrf" type="hidden" value="5801423b-5a21-482a-b816-c1566e7aaf27"> --%>
+        <%-- _csrf 는 내 was가 생성한 html인지 아닌지 확인하는 키 세션에 집어넣으면 사용자 확인 가능 --%>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 </div>
