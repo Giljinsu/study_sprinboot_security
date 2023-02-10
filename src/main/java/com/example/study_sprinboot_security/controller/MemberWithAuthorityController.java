@@ -1,18 +1,31 @@
 package com.example.study_sprinboot_security.controller;
 
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.study_sprinboot_security.services.MemberWithAuthorityService;
+
+@Controller
 public class MemberWithAuthorityController {
-    @RequestMapping(value = "/joinMember", method=RequestMethod.GET)
+
+    @Autowired
+    MemberWithAuthorityService memberWithAuthorityService;
+
+    @RequestMapping(value = "/joinForm", method=RequestMethod.GET)
     public ModelAndView joinForm(ModelAndView modelAndView) {
-        String viewName= "/WEB-INF/views/joinForm.jsp";
+        String viewName= "/WEB-INF/views/member/joinForm.jsp";
         modelAndView.setViewName(viewName);
-        return null;
+        return modelAndView;
     } 
-    @RequestMapping(value = "/joinProc", method=RequestMethod.GET)
-    public String joinProc(ModelAndView modelAndView) {
+    @RequestMapping(value = "/joinProc", method=RequestMethod.POST)
+    public String joinProc(@RequestParam Map params, ModelAndView modelAndView) {
+        Object result = memberWithAuthorityService.insert(params);
         return "redirect:/";
     } 
 }

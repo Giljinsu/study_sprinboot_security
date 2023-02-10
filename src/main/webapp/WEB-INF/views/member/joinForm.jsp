@@ -1,4 +1,3 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,24 +9,30 @@
   </head>
   <body>
      <div class="container">
-      <c:if test="${not empty param.fail}">
-      <%-- param은 원래 jsp가 가진것 --%>
-        <div><font color="red">Login Fail !</font></div>
-      </c:if>
-      <form class="form-signin" method="post" action="/login">
-        <h2 class="form-signin-heading">We Made Please sign in</h2>
+      
+      <form class="form-signin" method="post" action="/joinProc">
+        <h2 class="form-signin-heading">Join Form</h2>
+
         <p>
-          <label for="username" class="sr-only">Username</label>
+          <label for="username" class="sr-only">Username ID</label>
           <input type="text" id="username" name="username" class="form-control" placeholder="Username" required="" autofocus=""
           value="test01">
         </p>
         <p>
           <label for="password" class="sr-only">Password</label>
-          <input type="password" id="password" name="password" class="form-control" placeholder="Password" required=""
+          <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="" 
           value="1234">
         </p>
-        <%-- <input name="_csrf" type="hidden" value="5801423b-5a21-482a-b816-c1566e7aaf27"> --%>
-        <%-- _csrf 는 내 was가 생성한 html인지 아닌지 확인하는 키 세션에 집어넣으면 사용자 확인 가능 --%>
+        <p>
+          <label for="NAME" class="sr-only">NAME</label>
+          <input type="NAME" id="NAME" name="NAME" class="form-control" placeholder="NAME" required=""
+          value="test_first">
+        </p>
+        <p>
+          <label for="phone" class="sr-only">phone</label>
+          <input type="phone" id="phone" name="phone" class="form-control" placeholder="phone" required=""
+          value="010-1234-1234">
+        </p>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 </div>

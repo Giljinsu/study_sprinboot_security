@@ -6,6 +6,7 @@
 		SELECT * 
 		FROM MEMBER_WITH_AUTHORITY
 		where 1 = 1
+		<!-- 위에 넣는이유: 다음에 and 조건들이 들어가면서 보기 쉽게 함 -->
 		and MEMBER_ID = #{username} 
 	</select>
 	<insert id="insertWithUID" parameterType="Map">
